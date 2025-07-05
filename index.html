@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菩提心弈团队设计方案</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', SimSun, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .a4-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20mm;
+            position: relative;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 72px;
+            color: rgba(155, 89, 182, 0.1);
+            z-index: 1;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            margin: 0 auto 15px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #9b59b6, #3498db);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .team-name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #8e44ad;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+        }
+        
+        .slogan {
+            font-size: 18px;
+            color: #3498db;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #9b59b6;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .member-card {
+            width: 48%;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .member-role {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 5px;
+        }
+        
+        .member-name {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        
+        .values-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .vision-box, .mission-box {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid #3498db;
+        }
+        
+        .vision-title, .mission-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .rules-container {
+            margin-top: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .rule-item:last-child {
+            border: none;
+        }
+        
+        .rule-icon {
+            background: #9b59b6;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .rule-content {
+            flex: 1;
+        }
+        
+        .rule-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            
+            .a4-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 20mm;
+                width: auto;
+                min-height: 297mm;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-container">
+        <div class="watermark">菩提心弈</div>
+        
+        <header>
+            <div class="logo-container">
+                菩提心弈
+            </div>
+            <h1 class="team-name">菩提心弈团队</h1>
+            <p class="slogan">智慧创造未来 · AI赋能世界</p>
+        </header>
+        
+        <section class="team-intro">
+            <h2 class="section-title">团队介绍</h2>
+            <p>菩提心弈是由高校AI精英组成的创新型团队，专注于AIGC技术的研究与应用开发。我们凝聚智慧，在人工智能生成内容的浪潮中乘风破浪。</p>
+            
+            <div class="team-members">
+                <div class="member-card">
+                    <div class="member-role">团队组长</div>
+                    <div class="member-name">孔聆僮</div>
+                </div>
+                <div class="member-card">
+                    <div class="member-role">团队成员</div>
+                    <div class="member-name">李弈婷 · 张骏莹 · 周周</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="values-section">
+            <h2 class="section-title">团队理念</h2>
+            
+            <div class="values-container">
+                <div class="vision-box">
+                    <div class="vision-title">团队愿景</div>
+                    <p>成为AIGC领域的创新引领者，构建AI赋能的知识创造平台，推动教育领域的智能化变革，让智慧之光照亮每一位学习者。</p>
+                </div>
+                
+                <div class="mission-box">
+                    <div class="mission-title">团队口号</div>
+                    <p>"智慧创造未来，AI赋能世界"</p>
+                    <p>"AI赋能创意无限，智慧驱动教育变革"</p>
+                    <p>"人机协作，智创未来"</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="rules-section">
+            <h2 class="section-title">内部管理规则与约定</h2>
+            
+            <div class="rules-container">
+                <div class="rule-item">
+                    <div class="rule-icon">1</div>
+                    <div class="rule-content">
+                        <div class="rule-title">团队公约</div>
+                        <p>所有成员平等参与决策，共同承担责任。提倡开放透明的沟通文化，决策通过民主投票达成一致。</p>
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-icon">2</div>
+                    <div class="rule-content">
+                        <div class="rule-title">会议制度</div>
+                        <p>每周召开一次项目进度会议，每天进行15分钟的站立会议。会议应精简高效，提前准备议程。</p>
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-icon">3</div>
+                    <div class="rule-content">
+                        <div class="rule-title">工作方式</div>
+                        <p>采用敏捷开发模式，以两周一迭代推进项目。任务分配明确到人，设置明确截止时间。</p>
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-icon">4</div>
+                    <div class="rule-content">
+                        <div class="rule-title">知识产权</div>
+                        <p>团队共同创造的成果为集体所有，成员必须签署知识产权协议。个人创意应在团队内部充分共享。</p>
+                    </div>
+                </div>
+                
+                <div class="rule-item">
+                    <div class="rule-icon">5</div>
+                    <div class="rule-content">
+                        <div class="rule-title">成长机制</div>
+                        <p>每月举办内部技术分享会，新老成员互助结对。设置团队学习基金，鼓励成员参加技术培训。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>2023高校大学生AIGC实战夏令营 · 菩提心弈团队专属文档</p>
+        </footer>
+    </div>
+
+    <div class="no-print" style="position: fixed; bottom: 20px; right: 20px; background: #9b59b6; color: white; padding: 10px 20px; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" onclick="window.print()">
+        点击此处打印A4文档
+    </div>
+</body>
+</html>
